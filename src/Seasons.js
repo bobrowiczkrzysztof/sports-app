@@ -18,8 +18,9 @@ const Seasons = ({ season, setSeason }) => {
         );
         setSesasonsData(data.data.seasons);
       } catch (err) {
-        console.log(err);
-        // getSeasonsData();
+        setTimeout(() => {
+          getSeasonsData();
+        }, 1500);
       }
     };
     getSeasonsData();
