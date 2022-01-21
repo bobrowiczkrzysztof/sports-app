@@ -10,7 +10,12 @@ function App() {
   const getSportsData = async () => {
     try {
       const data = await axios.get(
-        `https://api.sportradar.us/soccer/trial/v4/en/seasons/${season}/schedules.json?api_key=yxvd55e7jycxapsp9ncm6pfg`
+        `https://api.sportradar.us/soccer/trial/v4/en/seasons/${season}/schedules.json?api_key=yxvd55e7jycxapsp9ncm6pfg`,
+        {
+          headers: {
+            'X-Originating-IP': '78.11.152.170',
+          },
+        }
       );
       setSportsData(data.data.schedules);
     } catch (err) {

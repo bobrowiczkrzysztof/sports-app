@@ -14,7 +14,12 @@ const Seasons = ({ season, setSeason }) => {
     const getSeasonsData = async () => {
       try {
         const data = await axios.get(
-          'https://api.sportradar.us/soccer/trial/v4/en/competitions/sr:competition:202/seasons.json?api_key=yxvd55e7jycxapsp9ncm6pfg'
+          'https://api.sportradar.us/soccer/trial/v4/en/competitions/sr:competition:202/seasons.json?api_key=yxvd55e7jycxapsp9ncm6pfg',
+          {
+            headers: {
+              'X-Originating-IP': '78.11.152.170',
+            },
+          }
         );
         setSesasonsData(data.data.seasons);
       } catch (err) {
